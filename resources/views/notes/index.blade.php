@@ -7,11 +7,16 @@
 </head>
 <body>
     <h1>All notes</h1>
+
+    <h3>
+        <a href="/notes/create">Create Note</a>
+    </h3>
+    
     <ul>
         @foreach($allNotes as $note)
         <li>
             <h2>{{ $note->title }}</h2>    
-            <p>{{ $note->title }}</p>
+            <p>{{ $note->content }}</p>
         </li>
         @endforeach
     </ul>
