@@ -11,6 +11,10 @@
     <form action="/notes" method="post">
         @csrf
 
+        <h3>
+            <a href="/notes/create">Create Note</a>
+        </h3>
+
         <label for="title">Title: </label>
         <input type="text" id="title" name="title">
             <br>
