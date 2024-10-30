@@ -12,14 +12,15 @@
         @csrf
 
         <h3>
-            <a href="/notes/create">Create Note</a>
+            <a href="/notes/">Go Back...</a>
         </h3>
-
         <label for="title">Title: </label>
         <input type="text" id="title" name="title">
             <br>
+            <br>
         <label for="content">Content: </label>
         <textarea name="content" id="title"></textarea>
+            <br>
             <br>
         <input type="submit" value="Create">
     </form>

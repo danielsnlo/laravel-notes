@@ -12,13 +12,25 @@
         <a href="/notes/create">Create Note</a>
     </h3>
     
-    <ul>
+    <hr>
+
+    <li>
         @foreach($allNotes as $note)
-        <li>
-            <h2>{{ $note->title }}</h2>    
-            <p>{{ $note->content }}</p>
-        </li>
+            <ol>
+                <h2>{{ $note->title }}</h2>   
+                <p>{{ $note->content }}</p>
+                <h5><a href="/notes/{{$note->id}}">Show</a></h5>
+                {{-- <h6><a href="/notes/{{$note->id}}">Destroy</a></h6> --}}
+                <form action="/notes/{{$note->id}}/delete" method="post">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit">Delete</button>
+                </form>
+
+                <hr>
+            </ol>
         @endforeach
-    </ul>
+    </li>
+
 </body>
 </html>

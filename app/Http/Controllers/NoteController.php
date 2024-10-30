@@ -35,4 +35,21 @@ class NoteController extends Controller
 
         return redirect('/notes');
     }
+
+    public function show($id)
+    {
+        $note = Note::find($id);
+        return view ('notes.show', ['note' => $note]);
+    }
+
+    public function delete($id)
+    {
+        $note = Note::find($id);
+        if ($note) {
+        $note->delete();
+
+        return redirect('/notes');
+        // return view ('note.destroy', ['note' => $note]);
+    }
+}
 }
